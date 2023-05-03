@@ -1,5 +1,5 @@
 name: Deploy on push to main
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: Deploy on GH Pages 🚀
 on:
   push:
     branches:
