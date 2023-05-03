@@ -13,7 +13,7 @@ jobs:
       - name: Checkout 🔔
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node 🪢
         uses: actions/setup-node@v3
         with:
           node-version: "16"
@@ -21,8 +21,8 @@ jobs:
       - name: Install dependencies 💾
         run: npm install
 
-      - name: Build
-        run: nmp run build
+      - name: Build 👷
+        run: npm run build
 
       - name: Deploy 🚀
         uses: actions/deploy-pages@v1
