@@ -1,7 +1,7 @@
 import {Col, Row} from "antd";
 import {SocialIcon} from 'react-social-icons';
 
-import {CardCol, StyledImage, StyledIconCol, LayoutRow} from "./styles";
+import {CardCol, StyledImage, StyledIconCol, LayoutRow, SocialsRow} from "./styles";
 
 const MainPage = () => {
     const socialItems = [
@@ -29,7 +29,7 @@ const MainPage = () => {
                 <Row>
                     <StyledImage xs={{span: 24}} lg={{span: 12, offset: 6}}/>
                 </Row>
-                <Row>
+                <SocialsRow>
                     <Col xs={{span: 24}} lg={{span: 16, offset: 4}}>
                         <Row>
                             <Col span={16} offset={4}>
@@ -39,7 +39,7 @@ const MainPage = () => {
                             </Col>
                         </Row>
                     </Col>
-                </Row>
+                </SocialsRow>
             </CardCol>
         </LayoutRow>
     )
