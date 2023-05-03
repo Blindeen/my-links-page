@@ -1,3 +1,9 @@
+@media (max-width: 480px) {
+  body {
+    background: black;
+  }
+}
+
 .App {
   text-align: center;
 }
