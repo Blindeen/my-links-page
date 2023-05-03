@@ -1,11 +1,9 @@
 name: Deploy on push to main
-run-name: Deploy on GH Pages 🚀
+
 on:
   push:
     branches:
       - main
-
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -13,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages-build-deployment"
   cancel-in-progress: true
 
 jobs:
