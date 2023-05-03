@@ -5,7 +5,7 @@ import { CardCol, LayoutRow, SocialsRow, StyledIconCol, StyledImage } from './st
 import palette from '../../palette';
 
 const MainPage = () => {
-  const socialItems = [
+  const socialLinks = [
     'https://github.com/Blindeen',
     'https://twitter.com/kubaszmajda',
     'https://www.instagram.com/kubaszmajda/',
@@ -14,7 +14,7 @@ const MainPage = () => {
     'https://open.spotify.com/user/kszmajda?si=d7adbf43f4ed4319',
   ];
 
-  const socialItemsJSX = socialItems.map((link, index) => (
+  const socialLinksJSX = socialLinks.map((link, index) => (
     <Col key={index} xs={{ span: 24 }} lg={{ span: 4 }}>
       <Row key={index}>
         <StyledIconCol key={index}>
@@ -34,7 +34,7 @@ const MainPage = () => {
           <Col xs={{ span: 24 }} lg={{ span: 16, offset: 4 }}>
             <Row>
               <Col span={16} offset={4}>
-                <Row>{socialItemsJSX}</Row>
+                <Row>{socialLinksJSX}</Row>
               </Col>
             </Row>
           </Col>
