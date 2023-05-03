@@ -17,7 +17,7 @@ const MainPage = () => {
         <Col key={index} xs={{span: 24}} lg={{span: 4}}>
             <Row key={index}>
                 <StyledIconCol key={index}>
-                    <SocialIcon key={index} url={link} fgColor='white' bgColor='transparent'/>
+                    <SocialIcon key={index} url={link} target="_blank" fgColor='white' bgColor='transparent'/>
                 </StyledIconCol>
             </Row>
         </Col>
