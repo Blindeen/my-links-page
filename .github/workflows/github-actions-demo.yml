@@ -31,5 +31,10 @@ jobs:
       - name: Build 👷
         run: npm run build
 
+      - name: Create artifacts 🖼️
+        uses: actions/upload-pages-artifact@v1
+        with:
+            path: ./build
+
       - name: Deploy 🚀
         uses: actions/deploy-pages@v1
