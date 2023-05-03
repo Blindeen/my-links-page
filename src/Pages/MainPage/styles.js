@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import palette from '../../palette';
+
 export const LayoutRow = styled(Row)`
-  margin-top: 50px;
+  margin-top: 40px;
 
   @media (max-width: 480px) {
     margin-top: 0;
@@ -10,14 +12,13 @@ export const LayoutRow = styled(Row)`
 `;
 
 export const SocialsRow = styled(Row)`
-  margin-top: 20px;
+  margin-top: 35px;
 `;
 
 export const StyledImage = styled(Col)`
-  background-image: linear-gradient(to bottom, transparent 80%, black), url('/assets/winter_photo_web.jpg');
+  background-image: linear-gradient(to bottom, transparent 80%, ${palette.black}), url('/assets/winter_photo_web.jpg');
   height: 458px;
   background-size: cover;
-  margin-bottom: 25px;
   border-radius: 12px;
 
   @media (max-width: 480px) {
@@ -28,7 +29,7 @@ export const StyledImage = styled(Col)`
 export const CardCol = styled(Col)`
   background-color: black;
   border-radius: 12px;
-  padding: 40px 0 25px 0;
+  padding: 40px 0 40px 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   @media (max-width: 480px) {
