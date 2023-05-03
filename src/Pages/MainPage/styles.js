@@ -16,7 +16,8 @@ export const SocialsRow = styled(Row)`
 `;
 
 export const StyledImage = styled(Col)`
-  background-image: linear-gradient(to bottom, transparent 80%, ${palette.black}), url('/assets/winter_photo_web.jpg');
+  background-image: linear-gradient(to bottom, transparent 80%, ${palette.black}),
+    url('/my-links-page/assets/winter_photo_web.jpg');
   height: 458px;
   background-size: cover;
   border-radius: 12px;
