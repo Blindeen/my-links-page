@@ -1,24 +1,48 @@
 import { Col, Row } from 'antd';
-import { SocialIcon } from 'react-social-icons';
 
-import { CardCol, LayoutRow, SocialsRow, StyledIconCol, StyledImage } from './styles';
+import { CardCol, LayoutRow, SocialsRow, StyledIconCol, StyledImage, StyledSocialIcon } from './styles';
 import palette from '../../palette';
 
 const MainPage = () => {
   const socialLinks = [
-    'https://github.com/Blindeen',
-    'https://twitter.com/kubaszmajda',
-    'https://www.instagram.com/kubaszmajda/',
-    'https://www.linkedin.com/in/jakub-szmajda-773742265/',
-    'https://www.facebook.com/kubaszmajda/',
-    'https://open.spotify.com/user/kszmajda?si=d7adbf43f4ed4319',
+    {
+      link: 'https://github.com/Blindeen',
+      hoverColor: palette.github,
+    },
+    {
+      link: 'https://twitter.com/kubaszmajda',
+      hoverColor: palette.twitterBlue,
+    },
+    {
+      link: 'https://www.instagram.com/kubaszmajda/',
+      hoverColor: palette.instagramPink,
+    },
+    {
+      link: 'https://www.linkedin.com/in/jakub-szmajda-773742265/',
+      hoverColor: palette.linkedinPurple,
+    },
+    {
+      link: 'https://www.facebook.com/kubaszmajda/',
+      hoverColor: palette.facebookBlue,
+    },
+    {
+      link: 'https://open.spotify.com/user/kszmajda?si=d7adbf43f4ed4319',
+      hoverColor: palette.spotifyGreen,
+    },
   ];
 
-  const socialLinksJSX = socialLinks.map((link, index) => (
+  const socialLinksJSX = socialLinks.map(({ link, hoverColor }, index) => (
     <Col key={index} xs={{ span: 24 }} lg={{ span: 4 }}>
       <Row key={index}>
         <StyledIconCol key={index}>
-          <SocialIcon key={index} url={link} target='_blank' fgColor={palette.white} bgColor='transparent' />
+          <StyledSocialIcon
+            key={index}
+            url={link}
+            target='_blank'
+            fgColor={palette.white}
+            bgColor='transparent'
+            hoverColor={hoverColor}
+          />
         </StyledIconCol>
       </Row>
     </Col>

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
 import palette from '../../palette';
+import { SocialIcon } from 'react-social-icons';
 
 export const LayoutRow = styled(Row)`
   margin-top: 40px;
@@ -42,4 +43,16 @@ export const CardCol = styled(Col)`
 export const StyledIconCol = styled(Col)`
   width: fit-content;
   margin: 0 auto 0 auto;
+`;
+
+export const StyledSocialIcon = styled(SocialIcon)`
+  ${({ hoverColor }) =>
+    hoverColor &&
+    `
+    .social-svg:hover {
+      .social-svg-icon {
+        fill: ${hoverColor} !important;
+    }
+  }
+  `}
 `;
