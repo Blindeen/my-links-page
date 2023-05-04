@@ -5,13 +5,13 @@ import palette from '../../palette';
 import { SocialIcon } from 'react-social-icons';
 
 export const LayoutRow = styled(Row)`
+  padding-bottom: 50px;
+  min-height: 100vh;
+
   @media (max-width: 480px) {
     margin-top: 0;
     padding-bottom: 0;
   }
-  padding-bottom: 105px;
-
-  min-height: 100vh;
 `;
 
 export const SocialsRow = styled(Row)`
