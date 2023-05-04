@@ -11,11 +11,7 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🔔
@@ -32,11 +28,22 @@ jobs:
       - name: Build 👷
         run: npm run build
 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    needs: build
+
+    runs-on: ubuntu-latest
+    steps:
       - name: Create artifacts 🖼️
         uses: actions/upload-pages-artifact@v1
         with:
-            path: ./build
+          path: ./build
 
       - name: Deploy 🚀
         id: deployment
         uses: actions/deploy-pages@v1
+
+
