@@ -28,6 +28,11 @@ jobs:
       - name: Build 👷
         run: npm run build
 
+      - name: Create artifacts 🖼️
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./build
+
   deploy:
     environment:
       name: github-pages
@@ -37,13 +42,6 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: Create artifacts 🖼️
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./build
-
       - name: Deploy 🚀
         id: deployment
         uses: actions/deploy-pages@v1
-
-
