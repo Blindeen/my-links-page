@@ -1,6 +1,6 @@
 import { Col, Row } from 'antd';
 
-import { CardCol, LayoutRow, SocialsRow, StyledIconCol, StyledImage, StyledSocialIcon } from './styles';
+import { CardCol, LayoutRow, SocialsRow, StyledIconCol, StyledImageCol, StyledImg, StyledSocialIcon } from './styles';
 import palette from '../../palette';
 
 const MainPage = () => {
@@ -50,9 +50,15 @@ const MainPage = () => {
 
   return (
     <LayoutRow>
-      <CardCol xs={{ span: 24 }} md={{ span: 16, offset: 4 }} lg={{ span: 12, offset: 6 }}>
+      <StyledImg src='/my-links-page/assets/red-face-avatar.jpg' />
+      <CardCol xs={{ span: 24 }} sm={{ span: 16, offset: 4 }} md={{ span: 16, offset: 4 }} lg={{ span: 12, offset: 6 }}>
         <Row>
-          <StyledImage xs={{ span: 24 }} md={{ span: 16, offset: 4 }} lg={{ span: 12, offset: 6 }} />
+          <StyledImageCol
+            xs={{ span: 24 }}
+            sm={{ span: 16, offset: 4 }}
+            md={{ span: 16, offset: 4 }}
+            lg={{ span: 12, offset: 6 }}
+          />
         </Row>
         <SocialsRow>
           <Col xs={{ span: 24 }} lg={{ span: 16, offset: 4 }}>
