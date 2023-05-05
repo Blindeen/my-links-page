@@ -1,24 +1,48 @@
 import { Col, Row } from 'antd';
-import { SocialIcon } from 'react-social-icons';
 
-import { CardCol, LayoutRow, SocialsRow, StyledIconCol, StyledImage } from './styles';
+import { CardCol, LayoutRow, SocialsRow, StyledIconCol, StyledImageCol, StyledImg, StyledSocialIcon } from './styles';
 import palette from '../../palette';
 
 const MainPage = () => {
   const socialLinks = [
-    'https://github.com/Blindeen',
-    'https://twitter.com/kubaszmajda',
-    'https://www.instagram.com/kubaszmajda/',
-    'https://www.linkedin.com/in/jakub-szmajda-773742265/',
-    'https://www.facebook.com/kubaszmajda/',
-    'https://open.spotify.com/user/kszmajda?si=d7adbf43f4ed4319',
+    {
+      link: 'https://github.com/Blindeen',
+      hoverColor: palette.github,
+    },
+    {
+      link: 'https://twitter.com/kubaszmajda',
+      hoverColor: palette.twitterBlue,
+    },
+    {
+      link: 'https://www.instagram.com/kubaszmajda/',
+      hoverColor: palette.instagramPink,
+    },
+    {
+      link: 'https://www.linkedin.com/in/jakub-szmajda-773742265/',
+      hoverColor: palette.linkedinBlue,
+    },
+    {
+      link: 'https://www.facebook.com/kubaszmajda/',
+      hoverColor: palette.facebookBlue,
+    },
+    {
+      link: 'https://open.spotify.com/user/kszmajda?si=d7adbf43f4ed4319',
+      hoverColor: palette.spotifyGreen,
+    },
   ];
 
-  const socialLinksJSX = socialLinks.map((link, index) => (
+  const socialLinksJSX = socialLinks.map(({ link, hoverColor }, index) => (
     <Col key={index} xs={{ span: 24 }} lg={{ span: 4 }}>
       <Row key={index}>
         <StyledIconCol key={index}>
-          <SocialIcon key={index} url={link} target='_blank' fgColor={palette.white} bgColor='transparent' />
+          <StyledSocialIcon
+            key={index}
+            url={link}
+            target='_blank'
+            fgColor={palette.white}
+            bgColor='transparent'
+            hoverColor={hoverColor}
+          />
         </StyledIconCol>
       </Row>
     </Col>
@@ -26,9 +50,15 @@ const MainPage = () => {
 
   return (
     <LayoutRow>
-      <CardCol xs={{ span: 24 }} md={{ span: 16, offset: 4 }} lg={{ span: 12, offset: 6 }}>
+      <StyledImg src='/my-links-page/assets/red-face-avatar.jpg' />
+      <CardCol xs={{ span: 24 }} sm={{ span: 16, offset: 4 }} md={{ span: 16, offset: 4 }} lg={{ span: 12, offset: 6 }}>
         <Row>
-          <StyledImage xs={{ span: 24 }} md={{ span: 16, offset: 4 }} lg={{ span: 12, offset: 6 }} />
+          <StyledImageCol
+            xs={{ span: 24 }}
+            sm={{ span: 16, offset: 4 }}
+            md={{ span: 16, offset: 4 }}
+            lg={{ span: 12, offset: 6 }}
+          />
         </Row>
         <SocialsRow>
           <Col xs={{ span: 24 }} lg={{ span: 16, offset: 4 }}>
