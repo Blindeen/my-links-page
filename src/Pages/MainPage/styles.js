@@ -42,7 +42,7 @@ export const CardCol = styled(Col)`
   @media (max-width: 480px) {
     border-radius: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
     margin-top: 0;
   }
 `;
