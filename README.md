@@ -1,4 +1,4 @@
-# View on [GitHub Pages](https://blindeen.github.io/my-links-page/)
+# View on [GitHub Pages 🔗](https://blindeen.github.io/my-links-page/)
 
 # Getting Started with Create React App
 
