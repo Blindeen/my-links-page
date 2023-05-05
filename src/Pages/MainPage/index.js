@@ -19,7 +19,7 @@ const MainPage = () => {
     },
     {
       link: 'https://www.linkedin.com/in/jakub-szmajda-773742265/',
-      hoverColor: palette.linkedinPurple,
+      hoverColor: palette.linkedinBlue,
     },
     {
       link: 'https://www.facebook.com/kubaszmajda/',
