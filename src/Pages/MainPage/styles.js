@@ -57,12 +57,12 @@ export const StyledIconCol = styled(Col)`
 `;
 
 export const StyledSocialIcon = styled(SocialIcon)`
-  ${({ hoverColor }) =>
-    hoverColor &&
+  ${({ color }) =>
+    color &&
     `
     .social-svg:hover {
       .social-svg-icon {
-        fill: ${hoverColor} !important;
+        fill: ${color} !important;
     }
   }
   `}
