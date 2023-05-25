@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
-
-import palette from '../../palette';
 import { SocialIcon } from 'react-social-icons';
 
-export const LayoutRow = styled(Row)`
-  padding-bottom: 50px;
-  min-height: 100vh;
+import palette from '../../palette';
 
-  @media (max-width: 480px) {
+export const LayoutRow = styled(Row)`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  @media (max-width: 992px) {
+    display: block;
     margin-top: 0;
     padding-bottom: 0;
   }
@@ -20,12 +25,11 @@ export const SocialsRow = styled(Row)`
 `;
 
 export const StyledImageCol = styled(Col)`
-  background-image: linear-gradient(to bottom, transparent 80%, ${palette.black}),
+  background-image: linear-gradient(to bottom, transparent 75%, ${palette.black}),
     url('/my-links-page/assets/red-face-avatar.jpg');
-  background-position: center;
   height: 458px;
   background-size: cover;
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0;
 
   @media (max-width: 480px) {
     border-radius: 0;
@@ -36,8 +40,8 @@ export const CardCol = styled(Col)`
   background-color: black;
   border-radius: 12px;
   padding: 28px 0 0 0;
-  margin-top: 60px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  min-height: 600px;
 
   @media (max-width: 480px) {
     border-radius: 0;
@@ -53,12 +57,12 @@ export const StyledIconCol = styled(Col)`
 `;
 
 export const StyledSocialIcon = styled(SocialIcon)`
-  ${({ hoverColor }) =>
-    hoverColor &&
+  ${({ color }) =>
+    color &&
     `
     .social-svg:hover {
       .social-svg-icon {
-        fill: ${hoverColor} !important;
+        fill: ${color} !important;
     }
   }
   `}
