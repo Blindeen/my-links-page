@@ -51,7 +51,13 @@ const MainPage = () => {
   return (
     <LayoutRow>
       <StyledImg src='/my-links-page/assets/red-face-avatar.jpg' />
-      <CardCol xs={{ span: 24 }} sm={{ span: 16, offset: 4 }} md={{ span: 16, offset: 4 }} lg={{ span: 12, offset: 6 }}>
+      <CardCol
+        xs={{ span: 24 }}
+        sm={{ span: 16, offset: 4 }}
+        md={{ span: 16, offset: 4 }}
+        lg={{ span: 12, offset: 6 }}
+        xxl={{ span: 10, offset: 7 }}
+      >
         <Row>
           <StyledImageCol
             xs={{ span: 24 }}

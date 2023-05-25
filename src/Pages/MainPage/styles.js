@@ -12,7 +12,7 @@ export const LayoutRow = styled(Row)`
   width: 100vw;
   height: 100vh;
 
-  @media (max-width: 480px) {
+  @media (max-width: 992px) {
     display: block;
     margin-top: 0;
     padding-bottom: 0;
