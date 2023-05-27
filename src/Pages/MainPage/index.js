@@ -38,7 +38,7 @@ const MainPage = () => {
     <LayoutRow>
       <StyledImg src='/my-links-page/assets/red-face-avatar.jpg' />
       <SwitchDiv>
-        <Switch type='primary' onClick={() => setLightTheme(!lightTheme)} />
+        <Switch onClick={() => setLightTheme(!lightTheme)} />
       </SwitchDiv>
       <CardCol
         xs={{ span: 24 }}
