@@ -1,35 +1,21 @@
-import { Col, Row } from 'antd';
+import { useState } from 'react';
+import { Col, Row, Switch } from 'antd';
 
-import { CardCol, LayoutRow, SocialsRow, StyledIconCol, StyledImageCol, StyledImg, StyledSocialIcon } from './styles';
+import {
+  CardCol,
+  LayoutRow,
+  SocialsRow,
+  StyledIconCol,
+  StyledImageCol,
+  StyledImg,
+  StyledSocialIcon,
+  SwitchDiv,
+} from './styles';
 import palette from '../../palette';
+import socialLinks from '../../socialLinks';
 
 const MainPage = () => {
-  const socialLinks = [
-    {
-      link: 'https://github.com/Blindeen',
-      color: palette.github,
-    },
-    {
-      link: 'https://twitter.com/kubaszmajda',
-      color: palette.twitterBlue,
-    },
-    {
-      link: 'https://www.instagram.com/kubaszmajda/',
-      color: palette.instagramPink,
-    },
-    {
-      link: 'https://www.linkedin.com/in/jakub-szmajda-773742265/',
-      color: palette.linkedinBlue,
-    },
-    {
-      link: 'https://www.facebook.com/kubaszmajda/',
-      color: palette.facebookBlue,
-    },
-    {
-      link: 'https://open.spotify.com/user/kszmajda?si=d7adbf43f4ed4319',
-      color: palette.spotifyGreen,
-    },
-  ];
+  const [lightTheme, setLightTheme] = useState(false);
 
   const socialLinksJSX = socialLinks.map(({ link, color }, index) => (
     <Col key={index} xs={{ span: 24 }} lg={{ span: 4 }}>
@@ -39,7 +25,7 @@ const MainPage = () => {
             key={index}
             url={link}
             target='_blank'
-            fgColor={palette.white}
+            fgColor={lightTheme ? palette.black : palette.white}
             bgColor='transparent'
             color={color}
           />
@@ -51,12 +37,16 @@ const MainPage = () => {
   return (
     <LayoutRow>
       <StyledImg src='/my-links-page/assets/red-face-avatar.jpg' />
+      <SwitchDiv>
+        <Switch type='primary' onClick={() => setLightTheme(!lightTheme)} />
+      </SwitchDiv>
       <CardCol
         xs={{ span: 24 }}
         sm={{ span: 16, offset: 4 }}
         md={{ span: 16, offset: 4 }}
         lg={{ span: 12, offset: 6 }}
         xxl={{ span: 10, offset: 7 }}
+        light={lightTheme}
       >
         <Row>
           <StyledImageCol
@@ -64,6 +54,7 @@ const MainPage = () => {
             sm={{ span: 16, offset: 4 }}
             md={{ span: 16, offset: 4 }}
             lg={{ span: 12, offset: 6 }}
+            light={lightTheme}
           />
         </Row>
         <SocialsRow>
