@@ -15,7 +15,7 @@ import palette from '../../palette';
 import socialLinks from '../../socialLinks';
 
 const MainPage = () => {
-  const [lightTheme, setLightTheme] = useState(false);
+  const [lightTheme, setLightTheme] = useState(localStorage.getItem('lightTheme') === 'true');
 
   const socialLinksJSX = socialLinks.map(({ link, color }, index) => (
     <Col key={index} xs={{ span: 24 }} lg={{ span: 4 }}>
@@ -34,11 +34,20 @@ const MainPage = () => {
     </Col>
   ));
 
+  const switchOnClick = () => {
+    const updateTheme = !lightTheme;
+    setLightTheme(updateTheme);
+    localStorage.setItem('lightTheme', updateTheme.toString());
+  };
+
   return (
     <LayoutRow>
       <StyledImg src='/my-links-page/assets/red-face-avatar.jpg' />
       <SwitchDiv>
-        <Switch onClick={() => setLightTheme(!lightTheme)} />
+        <Switch
+          onClick={switchOnClick}
+          defaultChecked={localStorage.getItem('lightTheme') === 'true'}
+        />
       </SwitchDiv>
       <CardCol
         xs={{ span: 24 }}
