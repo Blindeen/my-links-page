@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { SocialIcon } from 'react-social-icons';
 
-import palette from '../../palette';
+import palette from 'palette';
 
 export const LayoutRow = styled(Row)`
   display: flex;

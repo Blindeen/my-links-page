@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { Col, Row, Switch } from 'antd';
 
 import {
@@ -11,8 +12,8 @@ import {
   StyledSocialIcon,
   SwitchDiv,
 } from './styles';
-import palette from '../../palette';
-import socialLinks from '../../socialLinks';
+import palette from 'palette';
+import socialLinks from 'socialLinks';
 
 const MainPage = () => {
   const [lightTheme, setLightTheme] = useState(localStorage.getItem('lightTheme') === 'true');
