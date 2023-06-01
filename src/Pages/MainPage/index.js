@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Col, Row, Switch } from 'antd';
 
@@ -14,11 +14,17 @@ import {
 } from './styles';
 import palette from 'palette';
 import socialLinks from 'socialLinks';
+import shuffle from 'shuffle';
 
 const MainPage = () => {
   const [lightTheme, setLightTheme] = useState(localStorage.getItem('lightTheme') === 'true');
+  const [socialIcons, setSocialIcons] = useState([]);
 
-  const socialLinksJSX = socialLinks.map(({ link, color }, index) => (
+  useEffect(() => {
+    setSocialIcons(shuffle([...socialLinks]));
+  }, []);
+
+  const socialLinksJSX = socialIcons.map(({ link, color }, index) => (
     <Col key={index} xs={{ span: 24 }} lg={{ span: 4 }}>
       <Row key={index}>
         <StyledIconCol key={index}>
