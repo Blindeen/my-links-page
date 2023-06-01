@@ -25,10 +25,15 @@ export const SocialsRow = styled(Row)`
 `;
 
 export const StyledImageCol = styled(Col)`
-  background-image: linear-gradient(to bottom, transparent 75%, ${palette.black}),
+  background-image: linear-gradient(
+      to bottom,
+      transparent 75%,
+      ${(props) => (props.light ? palette.white : palette.black)}
+    ),
     url('/my-links-page/assets/red-face-avatar.jpg');
   height: 458px;
   background-size: cover;
+  background-position-x: center;
   border-radius: 12px 12px 0 0;
 
   @media (max-width: 480px) {
@@ -37,7 +42,7 @@ export const StyledImageCol = styled(Col)`
 `;
 
 export const CardCol = styled(Col)`
-  background-color: black;
+  background-color: ${(props) => (props.light ? palette.white : palette.black)};
   border-radius: 12px;
   padding: 28px 0 0 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -75,4 +80,14 @@ export const StyledImg = styled.img`
   width: 100%;
   filter: blur(104px);
   opacity: 0.8;
+`;
+
+export const SwitchDiv = styled.div`
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
 `;
